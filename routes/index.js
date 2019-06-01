@@ -6,6 +6,7 @@ var todosCtrl = require('../controllers/todos');
 // router.get('/', todoCtrl.todos);
 router.get('/', todosCtrl.index);
 router.post('/', hasInfo, todosCtrl.create);
+router.delete('/:id', todosCtrl.deleteTodo);
 
 function hasInfo(req, res, next) {
     if (req.body.todo !== '') return next();
